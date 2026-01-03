@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Resident Dashboard</h2>
+
+<div class="card">
+    <h3>Your Service Requests</h3>
+    {% if requests %}
+        <ul>
+            {% for req in requests %}
+                <li>
+                    {{ req.category }} – {{ req.status }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No service requests found.</p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h3>Your Bills</h3>
+    {% if bills %}
+        <ul>
+            {% for bill in bills %}
+                <li>
+                    Amount: ₹{{ bill.amount }} – {{ bill.status }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No bills available.</p>
+    {% endif %}
+</div>
+{% endblock %}

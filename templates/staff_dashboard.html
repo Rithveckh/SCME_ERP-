@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Staff Dashboard</h2>
+
+<div class="card">
+    <h3>Open Service Requests</h3>
+    {% if open_requests %}
+        <ul>
+            {% for req in open_requests %}
+                <li>
+                    {{ req.category }} – {{ req.priority }} priority
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No open service requests.</p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h3>Staff Responsibilities</h3>
+    <ul>
+        <li>View assigned work</li>
+        <li>Update service status</li>
+        <li>Close service requests</li>
+    </ul>
+</div>
+{% endblock %}

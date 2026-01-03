@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<div class="card">
+    <h3>System Overview</h3>
+    <p><strong>Total Residents:</strong> {{ total_residents }}</p>
+    <p><strong>Total Service Requests:</strong> {{ total_requests }}</p>
+    <p><strong>Pending Bills:</strong> {{ pending_bills }}</p>
+</div>
+
+<div class="card">
+    <h3>Admin Actions</h3>
+    <ul>
+        <li>Manage Residents</li>
+        <li>Track Service Requests</li>
+        <li>Monitor Billing & Payments</li>
+        <li>View Reports</li>
+    </ul>
+</div>
+{% endblock %}
